@@ -74,19 +74,19 @@ while 1:
             pygame.quit()
             sys.exit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_d:
+            if event.key == pygame.K_d or event.key == pygame.K_RIGHT:
                 if player_x_speed != -20:
                     player_x_speed = 20
                     player_y_speed = 0
-            if event.key == pygame.K_a:
+            if event.key == pygame.K_a or event.key == pygame.K_LEFT:
                 if player_x_speed != 20:
                     player_x_speed = -20
                     player_y_speed = 0
-            if event.key == pygame.K_w:
+            if event.key == pygame.K_w or event.key == pygame.K_UP:
                 if player_y_speed != 20:
                     player_y_speed = -20
                     player_x_speed = 0
-            if event.key == pygame.K_s:
+            if event.key == pygame.K_s or event.key == pygame.K_DOWN:
                 if player_y_speed != -20:
                     player_y_speed = 20
                     player_x_speed = 0
