@@ -1,5 +1,5 @@
 import pygame, sys, random, time
-
+pygame.init()
 
 # variable
 clock = pygame.time.Clock()
@@ -55,6 +55,9 @@ def border():
 def food_spawn():
     global food_x,food_y,player_length,food_color,food_plus
     if player_x == food_x and player_y == food_y:
+        pygame.mixer.music.load("sound/coin.wav")
+        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.play()
         player_length += food_plus
         print(player_length)
         food_x = random.randrange(0,win_x -20,20)
