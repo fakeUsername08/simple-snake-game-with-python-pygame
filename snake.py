@@ -12,6 +12,7 @@ red = (255,0,0)
 green = (0,255,0)
 blue = (0,0,255)
 black = (0,0,0)
+orange = (255,165,0)
 # player
 player_x = random.randrange(0,win_x -20,20)
 player_y = random.randrange(0,win_y -20,20)
@@ -25,6 +26,8 @@ food_y = random.randrange(0,win_y -20,20)
 food_color = "red"
 food_plus = 1
 food_luck_spawn = 30
+# font
+font = pygame.font.Font("fonts/Comics Deluxe.otf",25)
 
 # display
 win = pygame.display.set_mode((win_x,win_y))
@@ -94,12 +97,14 @@ while 1:
                     player_y_speed = 20
                     player_x_speed = 0
     clock.tick(fps)
+    sccore_board = font.render(f"sccore: {player_length}",False,orange)
     player_x += player_x_speed
     player_y += player_y_speed
     border()
     # food
     food_spawn()
     win.fill(black)
+    win.blit(sccore_board,(0,0))
     pygame.draw.rect(win,food_color,(food_x,food_y,20,20))
     if snake():
         time.sleep(5)
